@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Phonie</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./index.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1> ☎︎ Pho<span>nie</span></h1>
+            <p>Your go to telecomms tracker  by circle 270!</p>
+        </header>
+        <main>
+            <div class="slideshow">
+            </div>
+            <div class="container">
+                <!-- code here -->
+                <div class="card">
+                    <div class="card-image">	
+                        <h2 class="card-heading">
+                            Your friendly helper!
+                        </h2>
+                    </div>
+                    <div class="images"> <div class="country"></div> <div class="provider"></div> </div>
+                    <form class="card-form">
+                        <div class="input">
+                            <input type="text" class="input-field" value="" required/>
+                            <label class="input-label">Full name</label>
+                        </div>
+                        <div class="input">
+                            <input type="text" class="input-field" value="" required/>
+                            <label class="input-label">Email</label>
+                        </div>
+                        <div class="phone">
+                            <select onchange="countryChange()">
+                                <option value="">-- Select your country code --</option>
+                                <option value="ng">NG (+234)</option>
+                                <option value="gh">Gh (+233)</option>
+                                <option value="ky">Ky (+232)</option>
+                                <option value="uk">Uk (+447)</option>
+                                <option value="us">US (+443)</option>
+                            </select>
+                            <div>
+                                <input type="number" onkeypress="changeProvider()" class="input-field number" min="0" required/>
+                                <label class="input-label">Phone number</label>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <button class="action-button">Get started</button>
+                        </div>
+                    </form>
+                    <div class="card-info">
+                        <p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        <script src="./index.js" async defer></script>
+    </body>
+</html>
