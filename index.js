@@ -52,7 +52,7 @@ const changeProvider = () => {
     setTimeout(() => {
         message.style.visibility = 'hidden'
         message.classList.remove('animation')
-    }, 1500);
+    }, 4500);
 
     if(number.value === '0'){
         number.value = '';
