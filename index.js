@@ -48,6 +48,8 @@ const changeProvider = () => {
         etisalat = ['0809','0817','0818','0908','0909'],
         airtel = ['0701','0708','0802','0808','0812','0902','0907','0901','0912'],
         glo = ['0705','0805','0807','0811','0815','0905'];
+    
+    let provider  = number.value
 
     setTimeout(() => {
         message.style.visibility = 'hidden'
@@ -58,6 +60,19 @@ const changeProvider = () => {
         number.value = '';
         message.style.visibility = 'visible'
         message.classList.add('animation')
+    }
+    console.log(number.value.split(''))
+
+    if(number.value.split('')[0]==='2' || number.value.split(''[0]==='4')){
+        if(number.value.length === 6){
+            const digits = number.value.split('');
+            digits.shift()
+            digits.shift()
+            digits.shift()
+            console.log('herreeee')
+            console.log(digits)
+            provider = digits.join('');
+        }
     }
     
     if(number.value.length === 0){
@@ -82,8 +97,7 @@ const changeProvider = () => {
             }
         }
 
-        if(number.value.length === 3){
-            const provider  = number.value
+        if((number.value.length === 3 )||( number.value.length === 6)){
             box.style.visibility = 'hidden'
 
             let line;
