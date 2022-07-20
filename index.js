@@ -41,22 +41,50 @@ const changeProvider = () => {
     const number = document.querySelector('.number'),
         logos = document.querySelector('.images'),
         countryLogo = document.querySelector('.country'),
-        providerLogo = document.querySelector('.provider');
+        providerLogo = document.querySelector('.provider'),
+        box = document.querySelector('.suggestions'),
+        message = document.querySelector('.slideshow'),
+        mtn = ['0703','0706','0803','0806','0810','0813','0814','0816','0903','0906','0913'],
+        etisalat = ['0809','0817','0818','0908','0909'],
+        airtel = ['0701','0708','0802','0808','0812','0902','0907','0901','0912'],
+        glo = ['0705','0805','0807','0811','0815','0905'];
 
+    setTimeout(() => {
+        message.style.visibility = 'hidden'
+        message.classList.remove('animation')
+    }, 1500);
+
+    if(number.value === '0'){
+        number.value = '';
+        message.style.visibility = 'visible'
+        message.classList.add('animation')
+    }
     
     if(number.value.length === 0){
         // number.style.borderBottomColor = '#6658d3';
-    }else if(number.value.length === 10){
+    }else if(number.value.length === 9){
         number.style.borderBottomColor = 'green';
+    }else if(number.value.length === 10){
+        number.value = number.value;
+        message.style.visibility = 'visible'
+        message.innerHTML = 'Number cannot be more than 10 digits'
+        message.classList.add('animation')
     }else{
+
+        if(number.value.length  > 0 && number.value.length < 3){
+            box.style.visibility = 'visible'
+            if(number.value === '70'){
+                box.innerHTML = '<p>0703</p><p>0706</p><p>0701</p><p>0704</p>'
+            }else if(number.value === '90'){
+                box.innerHTML = '<p>0907</p><p>0903</p><p>0908</p><p>0902</p>'
+            }else{
+                box.innerHTML = '<p>0803</p><p>0806</p><p>0802</p><p>0809</p>'
+            }
+        }
 
         if(number.value.length === 3){
             const provider  = number.value
-
-            const mtn = ['0703','0706','0803','0806','0810','0813','0814','0816','0903','0906','0913'],
-                etisalat = ['0809','0817','0818','0908','0909'],
-                airtel = ['0701','0708','0802','0808','0812','0902','0907','0901','0912'],
-                glo = ['0705','0805','0807','0811','0815','0905'];
+            box.style.visibility = 'hidden'
 
             let line;
 

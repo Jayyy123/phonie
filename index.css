@@ -84,6 +84,42 @@ input {
     background-size: contain;
     background-repeat: no-repeat;
 }
+.suggestions{
+    position: absolute;
+    left: 40%;
+    background-color: rgb(197, 192, 192);
+    width: 100px;
+    height: 100%;
+    visibility: hidden;
+}
+
+@keyframes animate {
+    from{
+        transform: translateX(-1000px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+
+.slideshow{
+    font-size: larger;
+    text-align: center;
+    background-color: #eee;
+    border: 2px solid red;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+.animation{
+    animation: animate 0.5s linear 1;
+}
+
+.suggestions p{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
 
 .card-image {
 	border-radius: 8px;
