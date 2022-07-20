@@ -76,7 +76,7 @@ const changeProvider = () => {
     }
     
     if(number.value.length === 0){
-        // number.style.borderBottomColor = '#6658d3';
+        message.innerHTML = 'please fill in the remaining 10 digits of your phone number'
     }else if(number.value.length === 9){
         number.style.borderBottomColor = 'green';
     }else if(number.value.length === 10){
